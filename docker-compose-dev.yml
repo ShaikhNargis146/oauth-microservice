@@ -1,0 +1,39 @@
+version: "3"
+services:
+  web:
+    build: .
+    container_name: oauth-service
+    restart: unless-stopped
+    ports:
+      - "8080:8000"
+    links:
+      - mongo 
+      - redis
+    volumes: 
+      - ~/container-data/images:/data
+    environment:
+      - REDIS_URL=redis://cache
+      - DATABASE=mongodb://mongo:27017/pura
+      - UPLOAD_PATH=/data
+    networks:
+      - app-network
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:     
+      - dbdata:/data/db
+    networks:
+      - app-network
+ 
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+  redis_data:

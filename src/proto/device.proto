@@ -1,0 +1,19 @@
+syntax = "proto3";
+package device;
+service Device {
+  rpc getDetails (DeviceRequest) returns (DeviceResponse) {}
+}
+message DeviceRequest {
+  int32 id = 1;
+}
+message DeviceDetails {
+  int32 id = 1;
+  string name = 2;
+  string device_code = 3;
+  string model = 4;
+  string status = 5;
+}
+
+message DeviceResponse{
+  DeviceDetails message = 1;
+}
