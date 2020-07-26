@@ -4,10 +4,6 @@
 module.exports = {
 	env: process.env.NODE_ENV,
 	port: process.env.PORT,
-	AKey:process.env.AKey,
-	SAKey:process.env.SAKey,
-	aws_basepath:'https://ums-files.s3.ap-south-1.amazonaws.com',
-	Bucket:'ums-files',
 	database: 
 	{
 		uri:process.env.DATABASE
