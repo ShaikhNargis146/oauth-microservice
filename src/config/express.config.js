@@ -51,15 +51,15 @@ app.use(helmet());
  */
 
 app.oauth = new OAuth2Server({
-	model: require('../api/union/model'),
+	model: require('../api/user/model'),
 	accessTokenLifetime: 60 * 60,
 	allowBearerTokensInQueryString: true
 });
 app.all('/oauth/token', obtainToken);
-app.get('/', authenticateRequest, function(req, res) {
+app.use('/device', authenticateRequest, function(req, res) {
 	client.getDetails({id: deviceId}, function(err, response) {
-		console.log('device Details for device Id:',deviceId,'\n' ,response.message);
-		res.send(response.message);
+		console.log('device Details for device Id:',deviceId,'\n' ,response);
+		res.send(response);
 	 
 	});
 });

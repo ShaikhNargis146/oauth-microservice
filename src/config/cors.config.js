@@ -7,7 +7,7 @@ const options = {
 	origin: (origin, callback) => {
 		console.log("inside origin",origin);
 		// In dev, allow these origins to access the API
-		const whiteList = ['localhost', 'chrome-extension','34.93.77.209','union.paperking.in','15.206.23.66'];
+		const whiteList = ['localhost', 'chrome-extension'];
 		// We are doing string matching here.
 		// For advanced use-case, use regex
 		const index = whiteList.findIndex((aWhiteListedOrigin) => origin.includes(aWhiteListedOrigin));
