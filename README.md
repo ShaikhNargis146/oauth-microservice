@@ -60,3 +60,8 @@ Authorization: "Bearer " + accessToken
 
 curl http://localhost:8080/device \
 	-H "Authorization: Bearer 951d6f603c2ce322c5def00ce58952ed2d096a72"
+
+## Now for communicating between microservice using GRPC
+ clone https://github.com/ShaikhNargis146/GRPC-nodejs.git and do npm i && npm start
+
+ ###### This API http://localhost:8080/device will get data from above mentioned microservice using GRPC
