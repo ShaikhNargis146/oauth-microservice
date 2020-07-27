@@ -64,7 +64,6 @@ var loadExampleData = function() {
 		console.log('Created client', client);
 	});
 };
-loadExampleData();
 /**
  * Dump the database content (for debug).
  */
@@ -95,7 +94,6 @@ var dump = function() {
 		console.log('users', users);
 	});
 };
-dump();
 /*
  * Methods used by all grant types.
  */
